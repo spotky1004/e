@@ -16,7 +16,7 @@ jobs:
       - run: npm run predeploy
       - run: npm run build
       - name: Deploy
-        uses: crazy-mx/ghaction-github-pages@v1
+        uses: crazy-max/ghaction-github-pages@v1
         with:
           target_branch: gh-pages
           build_dir: build
