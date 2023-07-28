@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "18.x"
-      - run: npm run i
+      - run: npm i
       - run: npm run predeploy
       - run: npm run build
       - name: Deploy
