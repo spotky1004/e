@@ -7,6 +7,9 @@
       "esnext"
     ],
     "baseUrl": "./src",
+    "typeRoots": [
+      "global.d.ts"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
