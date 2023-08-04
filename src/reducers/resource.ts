@@ -27,25 +27,25 @@ export const resourceActions = Object.fromEntries(
   ),
 ) as { [K in ResourceEnumKeys]: ResourceActions<(typeof RESOURCES)[K]> };
 
-export const add = (name: ResourceEnumKeys, by: number | string) => ({
+export const addResource = (name: ResourceEnumKeys, by: number | string) => ({
   type: resourceActions[name].add,
   payload: by,
 });
 
-export const set = (name: ResourceEnumKeys, to: number | string) => ({
+export const setResource = (name: ResourceEnumKeys, to: number | string) => ({
   type: resourceActions[name].set,
   payload: to,
 });
 
-export const reset = (name: ResourceEnumKeys, to: number | string) => ({
+export const resetResource = (name: ResourceEnumKeys, to: number | string) => ({
   type: resourceActions[name].reset,
   payload: to,
 });
 
 type ResourceAction =
-  | ReturnType<typeof add>
-  | ReturnType<typeof set>
-  | ReturnType<typeof reset>;
+  | ReturnType<typeof addResource>
+  | ReturnType<typeof setResource>
+  | ReturnType<typeof resetResource>;
 
 interface ResourceDatas {
   amount: string;
@@ -58,7 +58,7 @@ const init = () => {
     Object.values(RESOURCES).map(resource => [
       resource,
       {
-        amount: "0",
+        amount: Math.E.toString(),
         total: "0",
       },
     ]),
